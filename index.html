@@ -38,9 +38,22 @@ body{font-family:'Poppins',sans-serif;background:#fdf8f0;min-height:100vh;color:
 </head>
 <body>
 <div id="lockScreen"><div class="lock-box"><h1>Mariam & Sara</h1><p>Enter Password To Open Your Gift</p><input type="password" id="passwordInput" placeholder="Password"><button class="lock-btn" onclick="checkPass()">OPEN GIFT</button><div id="passError" style="color:#a83232;display:none;margin-top:12px;font-size:13px">Wrong Password, Try Again</div></div></div>
-<audio id="bgMusic" loop><source src="song.mp3" type="audio/mpeg"></audio>
+
+<audio id="bgMusic" loop><source src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/song.mp3" type="audio/mpeg"></audio>
+
 <div id="page-home" class="page active"><div class="container center"><div class="big-title">Mariam &<br>Sara</div><div class="gold-line"></div><p class="sub">this website has made specially for you</p><div style="font-size:48px;margin:20px 0">✉️</div><button class="big-btn" onclick="goPage('memories')">START JOURNEY</button></div></div>
-<div id="page-memories" class="page"><div class="container"><div class="pageTitle">I still remember everything..</div><div class="gold-line"></div><div class="mem-grid"><div class="mem-card"><img src="1.jpg"></div><div class="mem-card"><img src="2.jpg"></div><div class="mem-card"><img src="3.jpg"></div><div class="mem-card"><img src="4.jpg"></div><div class="mem-card"><img src="5.jpg"></div><div class="mem-card"><img src="6.jpg"></div></div><div style="text-align:center"><button class="big-btn gold" onclick="goPage('reasons')">NEXT</button></div></div></div>
+
+<div id="page-memories" class="page"><div class="container"><div class="pageTitle">I still remember everything..</div><div class="gold-line"></div>
+<div class="mem-grid">
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/1.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/2.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/3.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/4.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/5.jpg"></div>
+<div class="mem-card"><img src="https://raw.githubusercontent.com/linasleem126-sys/Gift-website-/main/6.jpg"></div>
+</div>
+<div style="text-align:center"><button class="big-btn gold" onclick="goPage('reasons')">NEXT</button></div></div></div>
+
 <div id="page-reasons" class="page"><div class="container"><div class="pageTitle">10 Things I Love About You</div><div class="gold-line"></div><div id="reasonsList">
 <div class="reason"><span class="num">1</span><div class="reason-text">Your smile</div></div>
 <div class="reason"><span class="num">2</span><div class="reason-text">Your kind heart</div></div>
@@ -53,10 +66,13 @@ body{font-family:'Poppins',sans-serif;background:#fdf8f0;min-height:100vh;color:
 <div class="reason"><span class="num">9</span><div class="reason-text">Your tenderness</div></div>
 <div class="reason"><span class="num">10</span><div class="reason-text">Just you ♡</div></div>
 </div><div style="text-align:center"><button class="big-btn gold" onclick="goPage('message')">Click here</button></div></div></div>
+
 <div id="page-message" class="page"><div class="container"><div class="pageTitle">Message For You</div><div class="gold-line"></div><div class="type-box" style="text-align:center;display:flex;flex-direction:column;justify-content:center"><div id="typedText"></div><div id="hiddenMessage" style="display:none">İ just wanna tell you that I love you so much and you are my favorite person ever,
 
 وعايزه اقولك مهما يحصل بينا هتفضلي انتي الأقرب ليا مهما حصل وعمري ف حياتي ما هبعد عنك أو ادي مكانك لحد ♥️</div><div style="margin-top:30px"><button id="clickHereBtn" class="big-btn gold" onclick="startTyping()">Click here</button></div></div><div style="text-align:center;margin-top:22px"><button class="big-btn" style="display:none" id="endBtn" onclick="goPage('end')">Continue 🥹</button></div></div></div>
+
 <div id="page-end" class="page"><div class="container center"><div style="font-size:70px">🤍</div><div class="big-title">I Love You</div><div class="gold-line"></div><button class="big-btn" onclick="goPage('home')">WATCH AGAIN</button></div></div>
+
 <script>
 const PASSWORD="1234";let originalText="",isTyping=false;
 function checkPass(){if(document.getElementById('passwordInput').value===PASSWORD){document.getElementById('lockScreen').style.transform="translateY(-100%)";setTimeout(()=>document.getElementById('lockScreen').style.display='none',700);const a=document.getElementById('bgMusic');a.volume=0.5;a.play().catch(()=>{document.body.addEventListener('click',()=>a.play(),{once:true})});}else{document.getElementById('passError').style.display='block';}}
